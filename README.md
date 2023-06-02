@@ -17,9 +17,9 @@
 <palign="justify">Задачи: применить технологии PHP.</p>
 
 <h2>Решение задач</h2>
-<h3>Задание1</h3>
+<h3>Задания 1-3</h3>
 
-```html
+```php
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,10 +27,6 @@
 <meta charset="utf-8">
 </head>
 <body>
-```
-
-```php
-
 <?php
 if (empty($_POST['city'])){
 ?>
