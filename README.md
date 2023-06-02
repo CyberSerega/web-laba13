@@ -162,26 +162,36 @@ echo "Привет, $name";
 </html>
 ```
 
-<h3>Задание13</h3>
+<h3>Задание9</h3>
+
+```php
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторная работа №13 №9</title>
+<meta charset="utf-8">
+</head>
+<body>
+<form action="" method="POST">
+ <p>Ваше имя: <input type="text" name="name" value = "<?php 
+ if (!empty($_POST['name'])) echo $_POST['name']; ?>"/></p>
+ <p>Ваше сообщение: <textarea name="message" /><?php 
+ if (!empty($_POST['message'])) echo $_POST['message']; ?></textarea></p>
+ <p><input type="submit" /></p>
+</form>
+
 <?php
-$arr = range(1,10);
-echo "Произведение чисел от 1 до 100 равно " . array_product($arr);
+if (!empty($_POST['name'])){
+$name = strip_tags($_POST["name"]);
+$message = strip_tags($_POST["message"]);
+echo "Привет, $name!<br>";
+echo "Твоё сообщение: $message";
+}
 ?>
-<h3>Задание14</h3>
-<?php
-$arr1 = [1, 2, 3];
-$arr2 = ['a', 'b', 'c'];
-$result = array_merge($arr1, $arr2);
-echo "Итоговый массив:";
-print_r($result);
-?>
-<h3>Задание15</h3>
-<?php
-$arr = [1, 2, 3, 4, 5];
-$result=array_slice($arr,1,3);
-echo "Итоговый массив:";
-print_r($result);
-?>
+</body>
+</html>
+```
+
 <h3>Задание16</h3>
 <?php
 $arr = [1, 2, 3, 4, 5];
