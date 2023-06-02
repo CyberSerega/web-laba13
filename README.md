@@ -75,22 +75,36 @@ echo "Твоё сообщение: $message";
 </html>
 ```
 
-<h3>Задание5</h3>
+<h3>Задание </h3>
+
+```php
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторная работа №13 №6</title>
+<meta charset="utf-8">
+</head>
+<body>
 <?php
-$arr = range(1, 5);
-if (in_array(3, $arr))
-	echo "Массив содержит элемент, равный 3.";
-else echo "Массив не содержит элемент, равный 3."
+if (empty($_POST['age'])){
 ?>
-<h3>Задание6</h3>
+<form action="" method="POST"> 
+ <p>Ваш возраст: <input type="text" name="age" /></p>
+ <p><input type="submit" /></p>
+</form>
 <?php
-$arr = [1, 2, 3, 4, 5];
-$sum=0;
-for ($i = 0; $i<count($arr); $i++) {
-    $sum+=$arr[$i];
 }
-echo "Сумма элементов массива равна " . $sum;
 ?>
+<?php
+if (!empty($_POST['age'])){
+$age = strip_tags($_POST["age"]);
+echo "Привет, тебе $age лет";
+}
+?>
+</body>
+</html>
+```
+
 <h3>Задание7</h3>
 <?php
 $arr = [1, 2, 3, 4, 5];
