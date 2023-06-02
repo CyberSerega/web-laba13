@@ -75,7 +75,7 @@ echo "Твоё сообщение: $message";
 </html>
 ```
 
-<h3>Задание </h3>
+<h3>Задание6 </h3>
 
 ```php
 <!DOCTYPE html>
@@ -106,26 +106,37 @@ echo "Привет, тебе $age лет";
 ```
 
 <h3>Задание7</h3>
+
+```php
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторная работа №13 №7</title>
+<meta charset="utf-8">
+</head>
+<body>
+<form action="" method="POST">
+ <p>Логин: <input type="text" name="login" /></p>
+ <p>Пароль: <input type="password" name="passwd" /></p>
+ <p><input type="submit" /></p>
+</form>
 <?php
-$arr = [1, 2, 3, 4, 5];
-$res=1;
-for ($i = 0; $i<count($arr); $i++) {
-    $res*=$arr[$i];
+$login = "student";
+$password = "qwerty";
+if (!empty($_POST['login'])){
+$userLogin = strip_tags($_POST["login"]);
+$userPassword = strip_tags($_POST["passwd"]);
+$userLogin = trim($userLogin);
+$userPassword = trim($userPassword);
+if($login==$userLogin & $password==$userPassword)
+echo "Доступ разрешен!";
+else echo "Доступ запрещён!";
 }
-echo "Произведение элементов массива равно " . $res;
 ?>
-<h3>Задание8</h3>
-<?php
-$arr = [1, 2, 3, 4, 5];
-$res=array_sum($arr)/count($arr);
-echo "Cреднее арифметическое элементов массива  равно " . $res;
-?>
-<h3>Задание9</h3>
-<?php
-$array = range(1, 100);
-echo "Массив, заполненный числами от 1 до 100:";
-print_r($array);
-?>
+</body>
+</html>
+```
+
 <h3>Задание10</h3>
 <?php
 $array = range('a', 'z');
