@@ -137,22 +137,31 @@ else echo "Доступ запрещён!";
 </html>
 ```
 
-<h3>Задание10</h3>
+<h3>Задание8</h3>
+
+```php
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторная работа №13 №8</title>
+<meta charset="utf-8">
+</head>
+<body>
+<form action="" method="POST">
+ <p>Ваше имя: <input type="text" name="name" value = "<?php 
+ if (!empty($_POST['name'])) echo $_POST['name']; ?>"></p> 
+ <p><input type="submit" ></p>
+</form>
 <?php
-$array = range('a', 'z');
-echo "Массив, заполненный буквами от 'a' до 'z':";
-print_r($array);
+if (!empty($_POST['name'])){
+$name = strip_tags($_POST["name"]);
+echo "Привет, $name";
+}
 ?>
-<h3>Задание11</h3>
-<?php
-$array = range(1,9);
-echo implode("-", $array);
-?>
-<h3>Задание12</h3>
-<?php
-$sum =(1+100)*50;
-echo "Сумма чисел от 1 до 100 равна " . $sum;
-?>
+</body>
+</html>
+```
+
 <h3>Задание13</h3>
 <?php
 $arr = range(1,10);
