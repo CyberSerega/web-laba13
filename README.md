@@ -46,28 +46,34 @@ echo "Ваш город: " . $city;
 </body>
 </html>
 ```
+<h3>Задания 4-5</h3>
 
 ```php
-<h3>Задание2</h3>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторная работа №13 №4,5</title>
+<meta charset="utf-8">
+</head>
+<body>
+<form action="" method="POST">
+ <p>Ваше имя: <input type="text" name="name" /></p>
+ <p>Ваш возраст: <input type="text" name="age" /></p>
+ <p>Ваше сообщение: <textarea name="message" /></textarea></p>
+ <p><input type="submit" /></p>
+</form>
 <?php
-function callb($n)
-{
-    return strtoupper($n);
+if (!empty($_POST['name'])){
+$name = strip_tags($_POST["name"]);
+$age = strip_tags($_POST["age"]);
+$message = strip_tags($_POST["message"]);
+echo "Привет, $name, тебе $age лет <br>";
+echo "Твоё сообщение: $message";
 }
-$array = ['a','b','c','d','e'];
-$array = array_map('callb',$array);
-print_r($array);
 ?>
-<h3>Задание3</h3>
-<?php
-$arr = range(1, 100);
-echo "В массиве " . count($arr) . " элементов.";
-?>
-<h3>Задание4</h3>
-<?php
-$arr = range(1, 100);
-echo "Последний элемент массива равен " . $arr[count($array)-1];
-?>
+</body>
+</html>
+```
 
 <h3>Задание5</h3>
 <?php
